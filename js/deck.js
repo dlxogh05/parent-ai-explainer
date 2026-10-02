@@ -1,5 +1,5 @@
 /**
- * Deck controller — keyboard, hash, fullscreen, image load states
+ * Deck controller — keyboard, hash, fullscreen, speaker notes, image ratios
  */
 (function () {
   "use strict";
@@ -11,16 +11,28 @@
   const posEl = document.getElementById("pos");
   const barEl = document.getElementById("bar");
   const liveEl = document.getElementById("live");
+  const notesEl = document.getElementById("notes");
   const btnPrev = document.getElementById("prev");
   const btnNext = document.getElementById("next");
+  const btnNote = document.getElementById("note");
   const btnFs = document.getElementById("fs");
 
   let index = 0;
+  let notesOn = false;
   let touchX = null;
+  let idleTimer = null;
 
   function clampIndex(n) {
-    const len = slides.length;
-    return ((n % len) + len) % len;
+    return Math.max(0, Math.min(slides.length - 1, n));
+  }
+
+  function updateNotes() {
+    if (!notesEl) return;
+    const src = slides[index].querySelector(".notes");
+    const text = src ? src.textContent.trim() : "";
+    notesEl.textContent = text;
+    notesEl.hidden = !notesOn || !text;
+    btnNote?.setAttribute("aria-pressed", notesOn ? "true" : "false");
   }
 
   function updateChrome() {
@@ -28,44 +40,36 @@
     const current = index + 1;
     if (posEl) posEl.textContent = current + " / " + total;
     if (barEl) barEl.style.transform = "scaleX(" + current / total + ")";
+    if (btnPrev) btnPrev.disabled = index === 0;
+    if (btnNext) btnNext.disabled = index === total - 1;
     const title = slides[index].dataset.title || "슬라이드";
     document.title = title + " · 부모님께 설명하는 AI";
     if (liveEl) liveEl.textContent = title + ", " + current + "번째 슬라이드";
-    history.replaceState(null, "", "#" + current);
+    if (location.hash !== "#" + current) history.replaceState(null, "", "#" + current);
+    updateNotes();
   }
 
-  function show(n, dir) {
-    const next = clampIndex(n);
-    const reduce =
-      window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
+  function show(n) {
+    index = clampIndex(n);
     slides.forEach((slide, i) => {
-      const on = i === next;
+      const on = i === index;
       slide.classList.toggle("is-active", on);
       slide.setAttribute("aria-hidden", on ? "false" : "true");
-      if (!reduce && on && dir) {
-        slide.classList.remove("is-enter-from-left", "is-enter-from-right");
-        // force reflow for re-trigger
-        void slide.offsetWidth;
-        slide.classList.add(
-          dir < 0 ? "is-enter-from-left" : "is-enter-from-right"
-        );
-        window.requestAnimationFrame(() => {
-          slide.classList.remove("is-enter-from-left", "is-enter-from-right");
-        });
-      }
+      if (on) slide.scrollTop = 0;
     });
-
-    index = next;
     updateChrome();
   }
 
   function next() {
-    show(index + 1, 1);
+    show(index + 1);
   }
   function prev() {
-    show(index - 1, -1);
+    show(index - 1);
+  }
+
+  function toggleNotes() {
+    notesOn = !notesOn;
+    updateNotes();
   }
 
   function toggleFullscreen() {
@@ -76,33 +80,55 @@
     }
   }
 
+  // In fullscreen, hide the controls after a few still seconds so the TV shows only the slide.
+  function wake() {
+    document.body.classList.remove("is-idle");
+    clearTimeout(idleTimer);
+    if (document.fullscreenElement) {
+      idleTimer = setTimeout(() => document.body.classList.add("is-idle"), 2500);
+    }
+  }
+
   btnNext?.addEventListener("click", next);
   btnPrev?.addEventListener("click", prev);
+  btnNote?.addEventListener("click", toggleNotes);
   btnFs?.addEventListener("click", toggleFullscreen);
+  document.addEventListener("fullscreenchange", wake);
+  window.addEventListener("mousemove", wake, { passive: true });
 
   window.addEventListener("keydown", (e) => {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
     const tag = (e.target && e.target.tagName) || "";
     if (tag === "INPUT" || tag === "TEXTAREA") return;
+    // let Space/Enter activate a focused control button instead of paging twice
+    if (tag === "BUTTON" && (e.key === " " || e.key === "Enter")) return;
 
     switch (e.key) {
       case "ArrowRight":
+      case "ArrowDown":
       case "PageDown":
       case " ":
         e.preventDefault();
         next();
         break;
       case "ArrowLeft":
+      case "ArrowUp":
       case "PageUp":
         e.preventDefault();
         prev();
         break;
       case "Home":
         e.preventDefault();
-        show(0, -1);
+        show(0);
         break;
       case "End":
         e.preventDefault();
-        show(slides.length - 1, 1);
+        show(slides.length - 1);
+        break;
+      case "n":
+      case "N":
+        e.preventDefault();
+        toggleNotes();
         break;
       case "f":
       case "F":
@@ -110,8 +136,9 @@
         toggleFullscreen();
         break;
       default:
-        break;
+        return;
     }
+    wake();
   });
 
   window.addEventListener(
@@ -136,21 +163,27 @@
     { passive: true }
   );
 
-  // Image load: keep natural ratio; mark frames while loading
-  deck.querySelectorAll(".figure__frame img").forEach((img) => {
-    const frame = img.closest(".figure__frame");
-    if (!frame) return;
-    const done = () => frame.classList.remove("is-loading");
-    if (!img.complete) {
-      frame.classList.add("is-loading");
-      img.addEventListener("load", done, { once: true });
-      img.addEventListener("error", done, { once: true });
-    }
+  window.addEventListener("hashchange", () => {
+    const n = parseInt(location.hash.slice(1), 10);
+    if (Number.isFinite(n) && n - 1 !== index) show(n - 1);
   });
 
-  // Boot from hash
-  const fromHash = parseInt(String(location.hash || "").replace("#", ""), 10);
-  const start =
-    Number.isFinite(fromHash) && fromHash >= 1 ? fromHash - 1 : 0;
-  show(start, 0);
+  // Frames take each image's own ratio (from width/height), so nothing is cropped or letterboxed.
+  deck.querySelectorAll(".figure__fit").forEach((fit) => {
+    const img = fit.querySelector("img");
+    if (!img) return;
+    const w = Number(img.getAttribute("width"));
+    const h = Number(img.getAttribute("height"));
+    if (w > 0 && h > 0) fit.style.setProperty("--ar", String(w / h));
+
+    const frame = img.closest(".figure__frame");
+    if (!frame || img.complete) return;
+    const done = () => frame.classList.remove("is-loading");
+    frame.classList.add("is-loading");
+    img.addEventListener("load", done, { once: true });
+    img.addEventListener("error", done, { once: true });
+  });
+
+  const fromHash = parseInt(String(location.hash || "").slice(1), 10);
+  show(Number.isFinite(fromHash) && fromHash >= 1 ? fromHash - 1 : 0);
 })();

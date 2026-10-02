@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -17,359 +17,429 @@
 
   <main class="deck" id="deck">
 
+    <!-- 1 · 표지 -->
     <section class="slide slide--cover is-active" data-title="표지" aria-hidden="false">
       <div class="copy">
         <h1>부모님께 설명하는 AI</h1>
-        <p class="lede">왜 필요한지, 어떻게 쓰는지.
-ChatGPT로 한 번 체감해 보시면 됩니다.</p>
-        <p class="meta">같이 보시죠 — TV·노트북</p>
+        <p class="lede">왜 필요한지, 어떻게 쓰는지.<br />ChatGPT로 한 번 체감해 보시면 됩니다.</p>
+        <p class="meta">2026년 10월 · 같이 보시죠</p>
       </div>
-      <figure class="figure figure--stage figure--bleed">
-        <div class="figure__frame figure__frame--flush">
-          <img
-            src="./assets/illustrations/cover-family-laptop.jpg"
-            alt="가족과 노트북을 함께 보는 장면"
-            width="1280"
-            height="720"
-            decoding="async"
-          />
+      <figure class="figure figure--plain">
+        <div class="figure__fit">
+          <div class="figure__frame">
+            <img src="./assets/illustrations/cover-family-laptop.jpg" alt="가족이 노트북을 함께 보는 장면" width="1280" height="720" decoding="async" />
+          </div>
         </div>
       </figure>
+      <aside class="notes">같이 한번 보시죠. 새 취미 배우자는 자리 아니에요.</aside>
     </section>
 
+    <!-- 2 · 오늘 -->
     <section class="slide slide--stack" data-title="오늘" aria-hidden="true">
-      <header>
+      <header class="head">
         <h2>오늘, 이 네 가지만요</h2>
-        <p class="meta" style="margin-top:0.45rem">새 취미 배우자는 자리 아니에요. 이미 하시는 일 이야기예요.</p>
+        <p class="meta">새 취미 배우자는 자리 아니에요. 이미 하시는 일 이야기예요.</p>
       </header>
       <ol class="agenda">
-        <li>AI가 뭔지 — 초안을 받아 고치는 도구</li>
-        <li>어떻게 여기까지 왔는지 — 한 줄 역사 (Jev까지)</li>
-        <li>어머니·아버지 일로 한번 써보기</li>
-        <li>ChatGPT로 이어갈지… 판단은 두 분이!</li>
+        <li><span class="agenda__n">1</span><span>AI가 뭔지 <em>초안을 받아 고치는 도구</em></span></li>
+        <li><span class="agenda__n">2</span><span>어떻게 여기까지 왔는지 <em>한 줄 역사</em></span></li>
+        <li><span class="agenda__n">3</span><span>어머니·아버지 일로 <em>한번 써보기</em></span></li>
+        <li><span class="agenda__n">4</span><span>ChatGPT로 이어갈지 <em>판단은 두 분이!</em></span></li>
       </ol>
+      <aside class="notes">끝낼 것 네 가지. 마지막 판단은 두 분이 하신다는 걸 먼저 말해 두기.</aside>
     </section>
 
+    <!-- 3 · AI란 -->
     <section class="slide slide--split" data-title="AI란" aria-hidden="true">
       <div class="copy">
         <h2>AI가 뭐냐면요</h2>
-        <p class="say">질문하면 초안을 적어 주는 도구예요.
-완벽한 직원이라기보다… 말 잘 듣는 조수에 가깝죠.
-
-예전에 검색해서 링크 고르셨다면,
-지금은 글·표·그림 초안을 받고 고치시면 됩니다.
-
-틀린 말도 해요. 그래서 — 확인은 사람이세요!</p>
+        <p class="key">질문하면 <strong>초안</strong>을 적어 주는 도구예요.</p>
+        <p class="say">완벽한 직원이라기보다, 말 잘 듣는 조수에 가깝죠.</p>
+        <dl class="then-now">
+          <div><dt>예전</dt><dd>검색해서 링크 고르기</dd></div>
+          <div class="is-now"><dt>지금</dt><dd>글·표·그림 초안 받고 고치기</dd></div>
+        </dl>
+        <p class="warn">틀린 말도 해요. 그래서 확인은 사람이세요!</p>
       </div>
-      <figure class="figure figure--inset">
-        <div class="figure__frame">
-          <img src="./assets/illustrations/search-to-draft.jpg" alt="검색에서 초안으로 바뀌는 비유" width="1280" height="720" loading="lazy" decoding="async" />
+      <figure class="figure">
+        <div class="figure__fit">
+          <div class="figure__frame">
+            <img src="./assets/illustrations/search-to-draft.jpg" alt="검색 결과 더미에서 초안 한 장으로 바뀌는 그림" width="1280" height="720" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="figure__cap">검색 → 초안</figcaption>
         </div>
-        <figcaption class="figure__cap">검색 → 초안</figcaption>
       </figure>
+      <aside class="notes">질문하면 초안을 적어 주는 도구. 확인은 사람!</aside>
     </section>
 
+    <!-- 4 · 왜 지금 -->
     <section class="slide slide--split-rev" data-title="왜 지금" aria-hidden="true">
-      <figure class="figure figure--inset">
-        <div class="figure__frame">
-          <img src="./assets/illustrations/human-verify.jpg" alt="초안을 검토하는 손" width="1152" height="864" loading="lazy" decoding="async" />
+      <figure class="figure">
+        <div class="figure__fit">
+          <div class="figure__frame">
+            <img src="./assets/illustrations/human-verify.jpg" alt="AI가 쓴 초안에 펜으로 체크하는 손" width="1152" height="864" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="figure__cap">초안은 AI · 확인은 사람</figcaption>
         </div>
-        <figcaption class="figure__cap">초안은 AI · 확인은 사람</figcaption>
       </figure>
       <div class="copy">
         <h2>왜 지금이에요?</h2>
-        <p class="say">글 쓰고, 정리하고, 찾고, 반복하는 일…
-이미 두 분 일 안에 있지 않으세요?
-
-새 직업을 배우라는 말이 아니라,
-하던 일의 초안을 맡겨 보자는 말씀입니다.</p>
+        <p class="key">글 쓰고, 정리하고, 찾고, 반복하는 일. 이미 두 분 일 안에 있지 않으세요?</p>
+        <p class="say">새 직업을 배우라는 말이 아니라, <strong>하던 일의 초안을 맡겨 보자</strong>는 말씀입니다.</p>
       </div>
+      <aside class="notes">이미 일 안에 글·정리·반복이 있다. 새로 배울 게 아니라 맡길 게 있다.</aside>
     </section>
 
-    <section class="slide slide--wide" data-title="역사" aria-hidden="true">
-      <header>
-        <h2>짧은 역사 — 한 줄로만요</h2>
-        <p class="meta" style="margin-top:0.35rem">옆줄기로 빼지 않았어요. Jev도 여기 마지막에 같이 있어요.</p>
+    <!-- 5 · 역사 -->
+    <section class="slide slide--stack" data-title="역사" aria-hidden="true">
+      <header class="head">
+        <h2>짧은 역사, 한 줄로만요</h2>
+        <p class="meta">2022년 말부터 지금까지. Jev도 옆으로 빼지 않고 이 줄 마지막에 있어요.</p>
       </header>
-      <div class="hist-wrap">
-        <figure class="figure">
-          <div class="figure__frame">
-            <img src="./assets/illustrations/ai-timeline-unified.jpg" alt="2022부터 2026까지 AI 타임라인" width="1280" height="720" loading="lazy" decoding="async" />
-          </div>
-        </figure>
-        <div class="table-scroll">
-          <table class="hist">
-            <thead>
-              <tr><th scope="col">때</th><th scope="col">장면</th><th scope="col">말로</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>22말~23</td><td>ChatGPT</td><td>“이렇게 말해 주세요”가 잠깐 기술처럼 보였어요. 남는 건 원하는 걸 분명히.</td></tr>
-              <tr><td>23</td><td>도구 붙이기</td><td>바깥 도구를 많이 붙였는데… 끝까지는 잘 안 가더라고요.</td></tr>
-              <tr><td>23~24</td><td>나만의 GPT</td><td>이름만 바꾼 주문 폭주. 포장 ≠ 실력.</td></tr>
-              <tr><td>25~26</td><td>이어서 일하기</td><td>설정은 얇게. 기준·맥락이 자산이에요.</td></tr>
-              <tr><td>26.9</td><td>Jev</td><td>긴 글 말고 A/B·예/아니요. 자동화 뒷단 부품이에요.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <ol class="timeline">
+        <li>
+          <span class="timeline__when">22말~23</span>
+          <span class="timeline__what">ChatGPT</span>
+          <span class="timeline__say">“이렇게 말해 주세요”가 잠깐 기술처럼 보였어요. 남는 건 원하는 걸 분명히.</span>
+        </li>
+        <li>
+          <span class="timeline__when">23</span>
+          <span class="timeline__what">도구 붙이기</span>
+          <span class="timeline__say">바깥 도구를 많이 붙였는데, 끝까지는 잘 안 가더라고요.</span>
+        </li>
+        <li>
+          <span class="timeline__when">23~24</span>
+          <span class="timeline__what">나만의 GPT</span>
+          <span class="timeline__say">이름만 바꾼 주문이 엄청 많았어요. 포장 ≠ 실력.</span>
+        </li>
+        <li>
+          <span class="timeline__when">25~26</span>
+          <span class="timeline__what">이어서 일하기</span>
+          <span class="timeline__say">설정은 얇게. 기준·맥락이 자산이에요.</span>
+        </li>
+        <li class="is-now">
+          <span class="timeline__when">26.9</span>
+          <span class="timeline__what">Jev</span>
+          <span class="timeline__say">긴 글 말고 A/B·예/아니요만. 자동화 뒤에서 체크하는 부품이에요.</span>
+        </li>
+      </ol>
+      <aside class="notes">잠깐만요, 한 줄로만. 각 칸은 한 문장씩. Jev는 마지막 칸일 뿐 별도 챕터 아님.</aside>
     </section>
 
+    <!-- 6 · 남는 것 -->
     <section class="slide slide--split" data-title="남는 것" aria-hidden="true">
       <div class="copy">
         <h2>그래서 남는 건요?</h2>
-        <p class="say">모델이 못 하면 바깥에 장치를 붙이고,
-다음 모델이 그걸 흡수하고…
-결국 짧고 정확한 목표·기준만 남아요.
-
-Jev도 그 줄 위예요.
-‘글 대신 체크’를 따로 판 거죠.</p>
+        <p class="key">결국 <strong>짧고 정확한 목표·기준</strong>만 남아요.</p>
+        <p class="say">Jev도 그 줄 위예요. ‘글 대신 체크’를 따로 떼어 낸 거죠.</p>
       </div>
-      <figure class="figure figure--inset">
-        <div class="figure__frame">
-          <img src="./assets/from-links/jev-side-by-side.png" alt="채팅 AI와 결정 AI 비교 도표" width="1672" height="918" loading="lazy" decoding="async" />
-        </div>
-        <figcaption class="figure__cap">채팅 AI vs 결정 AI (TypeSafe)</figcaption>
-      </figure>
+      <div class="panel">
+        <ol class="flow">
+          <li><span class="flow__n">1</span><span><b>장치</b>모델이 못 하면, 바깥에 장치를 붙이고</span></li>
+          <li><span class="flow__n">2</span><span><b>흡수</b>다음 모델이 그걸 스스로 해내고</span></li>
+          <li class="is-end"><span class="flow__n">3</span><span><b>남는 것</b>원하는 걸 분명히 말하는 능력</span></li>
+        </ol>
+      </div>
+      <aside class="notes">장치 → 흡수 → 기준만 남음. 그러니 설정 공부보다 원하는 걸 분명히 말하는 게 오래 간다.</aside>
     </section>
 
+    <!-- 7 · 어머니 -->
     <section class="slide slide--split" data-title="어머니" aria-hidden="true">
       <div class="copy">
-        <h2>어머니 일 — 여기부터 한번?</h2>
-        <p class="say">세금·회계, 금융, 자료 정리…
-그리고 동생 학습자료, 한국사 연표.
-
-오늘 실연은요:
-교과서 한 쪽 → 연표 초안 + 그림.
-
-숫자·신고는요? 사람이 확정하세요.</p>
+        <h2>어머니 일, 여기부터 한번?</h2>
+        <dl class="rows">
+          <div><dt>하시는 일</dt><dd>세금·회계, 금융, 자료 정리. 동생 학습자료, 한국사 연표.</dd></div>
+          <div class="is-key"><dt>오늘 해볼 것</dt><dd>교과서 한 쪽 → 연표 초안 + 그림</dd></div>
+          <div><dt>사람 몫</dt><dd>숫자·신고는 사람이 확정하세요.</dd></div>
+        </dl>
       </div>
-      <figure class="figure figure--inset">
-        <div class="figure__frame">
-          <img src="./assets/illustrations/mother-timeline-desk.jpg" alt="교과서와 연표 작업 책상" width="1152" height="864" loading="lazy" decoding="async" />
+      <figure class="figure">
+        <div class="figure__fit">
+          <div class="figure__frame">
+            <img src="./assets/illustrations/mother-timeline-desk.jpg" alt="교과서 옆에 연표를 그린 책상" width="1152" height="864" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="figure__cap">학습자료·연표</figcaption>
         </div>
-        <figcaption class="figure__cap">학습자료·연표</figcaption>
       </figure>
+      <aside class="notes">실연: 교과서 사진 한 장 올리고 “중학생용 연표로 정리해 줘”. 숫자·신고는 사람이 확정.</aside>
     </section>
 
+    <!-- 8 · 아버지 -->
     <section class="slide slide--split-rev" data-title="아버지" aria-hidden="true">
-      <figure class="figure figure--inset">
-        <div class="figure__frame">
-          <img src="./assets/illustrations/father-onepager.jpg" alt="메모에서 한 장 보고서로" width="1152" height="864" loading="lazy" decoding="async" />
+      <figure class="figure">
+        <div class="figure__fit">
+          <div class="figure__frame">
+            <img src="./assets/illustrations/father-onepager.jpg" alt="메모 여러 장 옆에 놓인 결정용 한 장 보고서" width="1152" height="864" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="figure__cap">메모 → 한 장</figcaption>
         </div>
-        <figcaption class="figure__cap">메모 → 한 장</figcaption>
       </figure>
       <div class="copy">
-        <h2>아버지 일 — 결정용 한 장</h2>
-        <p class="say">관리, 프로젝트 수주…
-세부까지는 제가 모릅니다. 지어내지 않을게요.
-
-오늘 실연은:
-받은 메모 → 결정용 한 장 초안.
-
-최종 판단·고객 말씀은 사람이시죠!</p>
+        <h2>아버지 일, 결정용 한 장</h2>
+        <dl class="rows">
+          <div><dt>하시는 일</dt><dd>관리, 프로젝트 수주. 세부는 제가 몰라서 지어내지 않을게요.</dd></div>
+          <div class="is-key"><dt>오늘 해볼 것</dt><dd>받은 메모 → 결정용 한 장 초안</dd></div>
+          <div><dt>사람 몫</dt><dd>최종 판단과 고객께 드리는 말씀.</dd></div>
+        </dl>
       </div>
+      <aside class="notes">실연: 메모를 붙여 넣고 “결정할 사람이 읽을 한 장으로”. 최종 판단은 사람.</aside>
     </section>
 
+    <!-- 9 · 사용법 -->
     <section class="slide slide--split" data-title="사용법" aria-hidden="true">
       <div class="copy">
         <h2>쓰는 법? 네 줄이면 돼요</h2>
-        <p class="say">① 역할 한 줄 — 누구처럼?
-② 재료 — 파일·사진·메모 주세요.
-③ 원하는 형태 — 표? 연표? 한 장?
-④ 틀리면… 다시 물어보세요!</p>
+        <ol class="steps">
+          <li><b>역할 한 줄</b><span>누구처럼 답할까요?</span></li>
+          <li><b>재료</b><span>파일·사진·메모를 주세요.</span></li>
+          <li><b>원하는 형태</b><span>표? 연표? 한 장?</span></li>
+          <li><b>틀리면 다시</b><span>그냥 다시 물어보세요!</span></li>
+        </ol>
       </div>
-      <figure class="figure figure--inset">
-        <div class="figure__frame">
-          <img src="./assets/illustrations/howto-four-steps.jpg" alt="사용법 네 단계 일러스트" width="1280" height="720" loading="lazy" decoding="async" />
+      <figure class="figure">
+        <div class="figure__fit">
+          <div class="figure__frame">
+            <img src="./assets/illustrations/howto-four-steps.jpg" alt="역할, 재료, 형태, 다시 묻기 네 단계 그림" width="1280" height="720" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="figure__cap">네 단계</figcaption>
         </div>
-        <figcaption class="figure__cap">네 단계</figcaption>
       </figure>
+      <aside class="notes">역할·재료·형태·다시. 이게 프롬프트 요령의 거의 전부.</aside>
     </section>
 
-    <section class="slide slide--split-rev" data-title="실제 사용" aria-hidden="true">
-      <figure class="figure figure--inset">
-        <div class="figure__frame">
-          <img src="./assets/from-links/chart-asking-doing.png" alt="Asking Doing Express 비율 차트" width="1200" height="700" loading="lazy" decoding="async" />
-        </div>
-        <figcaption class="figure__cap">Asking ~49% · Doing ~40% · Express ~11%</figcaption>
-      </figure>
+    <!-- 10 · 실제 사용 -->
+    <section class="slide slide--split" data-title="실제 사용" aria-hidden="true">
       <div class="copy">
-        <h2>사람들이 실제로 시키나 봐요</h2>
-        <p class="say">업무에서는
-‘시키기(글쓰기)’가 더 커요.
-
-잘 쓰는 분은?
-재료를 주시고
-초안을 고치시죠.</p>
-        <p class="meta">OpenAI How People Use ChatGPT</p>
+        <h2>사람들은 실제로 뭘 시킬까요?</h2>
+        <p class="key">업무에서는 <strong>‘시키기(글쓰기)’</strong>가 더 커요.</p>
+        <p class="say">잘 쓰는 분은 재료를 주시고, 받은 초안을 고치시죠.</p>
       </div>
+      <figure class="panel chart" aria-label="ChatGPT 대화 유형 비율">
+        <p class="chart__title">ChatGPT 대화 유형</p>
+        <ul class="bars">
+          <li style="--v:49"><span class="bars__label">묻기 <small>Asking</small></span><span class="bars__track"><span class="bars__fill"></span></span><span class="bars__val">49%</span></li>
+          <li style="--v:40"><span class="bars__label">시키기 <small>Doing</small></span><span class="bars__track"><span class="bars__fill"></span></span><span class="bars__val">40%</span></li>
+          <li style="--v:11"><span class="bars__label">표현 <small>Expressing</small></span><span class="bars__track"><span class="bars__fill"></span></span><span class="bars__val">11%</span></li>
+        </ul>
+        <figcaption class="figure__cap">전체 대화 기준 · OpenAI, How People Use ChatGPT</figcaption>
+      </figure>
+      <aside class="notes">숫자로요. 묻기가 제일 많지만 일할 때는 시키기가 커진다.</aside>
     </section>
 
+    <!-- 11 · 그림 -->
     <section class="slide slide--duo" data-title="그림" aria-hidden="true">
-      <header>
+      <header class="head">
         <h2>그림도 같은 화면에서요</h2>
-        <p class="meta" style="margin-top:0.35rem">Images 2.5 (2026-09-08) — 전 등급. 클로드는 사진·일러스트를 안 만들어요.</p>
+        <p class="meta">ChatGPT Images 2.5 (2026-09-08), 모든 등급. Claude는 사진·일러스트를 만들지 않아요.</p>
       </header>
       <div class="duo">
         <figure class="figure">
-          <div class="figure__frame">
-            <img src="./assets/from-links/img25-before.jpeg" alt="이미지 편집 전" width="1200" height="1600" loading="lazy" decoding="async" />
+          <div class="figure__fit">
+            <div class="figure__frame">
+              <img src="./assets/from-links/img25-before.jpeg" alt="편집 전 아이 사진" width="1200" height="1600" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="figure__cap">전</figcaption>
           </div>
-          <figcaption class="figure__cap">전</figcaption>
         </figure>
         <figure class="figure">
-          <div class="figure__frame">
-            <img src="./assets/from-links/img25-after.png" alt="이미지 편집 후" width="1086" height="1448" loading="lazy" decoding="async" />
+          <div class="figure__fit">
+            <div class="figure__frame">
+              <img src="./assets/from-links/img25-after.png" alt="같은 아이가 턱시도를 입은 편집 후 사진" width="1086" height="1448" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="figure__cap">후 · OpenAI Images 2.5</figcaption>
           </div>
-          <figcaption class="figure__cap">후 · OpenAI Images 2.5</figcaption>
         </figure>
       </div>
+      <aside class="notes">“옷만 바꿔 줘” 한 줄로 이렇게. 얼굴은 그대로 남는다.</aside>
     </section>
 
+    <!-- 12 · 그림 더 -->
     <section class="slide slide--duo" data-title="그림 더" aria-hidden="true">
-      <header>
+      <header class="head">
         <h2>이런 그림도 나와요</h2>
-        <p class="meta" style="margin-top:0.35rem">초대장, 설명용 삽화… 어머니 학습자료에도 같은 축이에요.</p>
+        <p class="meta">초대장, 설명용 삽화. 어머니 학습자료에도 같은 방식이에요.</p>
       </header>
       <div class="duo">
         <figure class="figure">
-          <div class="figure__frame">
-            <img src="./assets/from-links/img25-invite.png" alt="초대장 예시" width="1024" height="1536" loading="lazy" decoding="async" />
+          <div class="figure__fit">
+            <div class="figure__frame">
+              <img src="./assets/from-links/img25-invite.png" alt="손글씨 서체의 결혼식 초대장" width="1024" height="1536" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="figure__cap">초대장·인쇄물</figcaption>
           </div>
-          <figcaption class="figure__cap">초대장·인쇄물</figcaption>
         </figure>
         <figure class="figure">
-          <div class="figure__frame">
-            <img src="./assets/from-links/img25-city.png" alt="도시 설명 그림 예시" width="1087" height="1446" loading="lazy" decoding="async" />
+          <div class="figure__fit">
+            <div class="figure__frame">
+              <img src="./assets/from-links/img25-city.png" alt="다리와 언덕이 있는 도시 풍경 삽화" width="1087" height="1446" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="figure__cap">설명용 그림</figcaption>
           </div>
-          <figcaption class="figure__cap">설명용 그림</figcaption>
         </figure>
       </div>
+      <aside class="notes">글씨가 들어간 인쇄물도 된다. 학습자료 삽화로 연결.</aside>
     </section>
 
+    <!-- 13 · 왜 ChatGPT -->
     <section class="slide slide--split" data-title="왜 ChatGPT" aria-hidden="true">
       <div class="copy">
         <h2>왜 ChatGPT예요?</h2>
-        <p class="say">글 + 파일 + 그림이 한 화면이에요.
-유료 이유는 그림이 아니라  · 
-서류를 반복해서 올리는 한도예요.
-
-같은 구독에 Codex(자식용 개발)도 있어요.
-
-솔직히요? AA 지수(2026-10)에선
-Claude Opus 5.5가 앞섭니다(~58).
-GPT-6 Astra는 대략 50대 초반.
-그래도 두 분 첫 도구는 일·그림·익숙함으로 ChatGPT!</p>
-      </div>
-      <figure class="figure figure--inset">
-        <div class="figure__frame">
-          <img src="./assets/illustrations/chat-plus-images.jpg" alt="채팅과 그림이 한 화면인 장면" width="1152" height="864" loading="lazy" decoding="async" />
+        <p class="key"><strong>글 + 파일 + 그림</strong>이 한 화면이에요.</p>
+        <p class="say">유료로 갈 이유는 그림보다, 서류를 반복해서 올리는 한도예요. 같은 구독으로 제가 개발에 쓰는 Codex도 돼요.</p>
+        <div class="honest">
+          <p class="honest__lead">솔직히요? 점수는 Claude가 앞서요.</p>
+          <ul class="bars bars--sm">
+            <li style="--v:58"><span class="bars__label">Claude Opus 5.5</span><span class="bars__track"><span class="bars__fill"></span></span><span class="bars__val">약 58</span></li>
+            <li style="--v:53"><span class="bars__label">GPT-6 Astra</span><span class="bars__track"><span class="bars__fill"></span></span><span class="bars__val">약 53</span></li>
+          </ul>
+          <p class="meta">Artificial Analysis 지수, 2026-10 기준</p>
         </div>
-        <figcaption class="figure__cap">글·파일·그림</figcaption>
+        <p class="say">그래도 두 분 첫 도구는 <strong>일·그림·익숙함</strong>으로 ChatGPT!</p>
+      </div>
+      <figure class="figure">
+        <div class="figure__fit">
+          <div class="figure__frame">
+            <img src="./assets/illustrations/chat-plus-images.jpg" alt="채팅 화면과 그 안에서 만든 포스터가 나란히 있는 그림" width="1152" height="864" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="figure__cap">글·파일·그림</figcaption>
+        </div>
       </figure>
+      <aside class="notes">성능은 솔직히 말하기. 그래도 그림·익숙함 때문에 첫 도구는 ChatGPT.</aside>
     </section>
 
+    <!-- 14 · Jev 한 컷 -->
     <section class="slide slide--split-rev" data-title="2026 체크박스" aria-hidden="true">
-      <figure class="figure figure--inset">
-        <div class="figure__frame">
-          <img src="./assets/from-links/jev-hero.png" alt="TypeSafe Jev 소개 이미지" width="1230" height="1008" loading="lazy" decoding="async" />
+      <figure class="figure">
+        <div class="figure__fit">
+          <div class="figure__frame">
+            <img src="./assets/from-links/jev-hero.png" alt="TypeSafe Jev 소개 이미지" width="1230" height="1008" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="figure__cap">TypeSafe Jev · 2026-09-15</figcaption>
         </div>
-        <figcaption class="figure__cap">TypeSafe Jev · 2026-09-15</figcaption>
       </figure>
       <div class="copy">
-        <h2>역사 한 컷 더 — 2026년의 체크박스</h2>
-        <p class="say">앞에서 본 타임라인의 마지막 칸이에요.
-별도 제품 설명회가 아닙니다!
-
-두 분이 매일 켜실 화면은 ChatGPT예요.
-Jev는… 뒤에서 자동으로 고르는 부품으로만
-기억해 두시면 충분합니다.</p>
+        <h2>역사 한 컷 더, 2026년의 체크박스</h2>
+        <p class="key">앞에서 본 한 줄 역사의 <strong>마지막 칸</strong>이에요.</p>
+        <p class="say">두 분이 매일 켜실 화면은 ChatGPT예요. Jev는 뒤에서 자동으로 고르는 부품, 이 정도만 기억하시면 충분합니다.</p>
       </div>
+      <aside class="notes">별도 제품 설명회 아님. 한 컷만 보고 넘어가기.</aside>
     </section>
 
-    <section class="slide slide--split" data-title="주의" aria-hidden="true">
-      <div class="copy">
-        <h2>이것만은요…</h2>
-        <p class="say">· 비밀 서류 그대로 올리지 마세요.
-· 답을 무조건 믿지 마세요 — 숫자·날짜는 꼭 보세요!
-· 설정·플러그인 수집부터 하지 마세요.
-
-본업 판단이 더 오래 갑니다.</p>
-      </div>
-      <figure class="figure figure--inset">
-        <div class="figure__frame">
-          <img src="./assets/illustrations/human-verify.jpg" alt="검토하는 장면" width="1152" height="864" loading="lazy" decoding="async" />
-        </div>
-        <figcaption class="figure__cap">검토는 사람</figcaption>
-      </figure>
+    <!-- 15 · 주의 -->
+    <section class="slide slide--stack" data-title="주의" aria-hidden="true">
+      <header class="head">
+        <h2>이것만은요</h2>
+      </header>
+      <ol class="rules">
+        <li><b>비밀 서류는 그대로 올리지 마세요.</b><span>주민번호·계좌는 지우고 올리기.</span></li>
+        <li><b>답을 무조건 믿지 마세요.</b><span>숫자·날짜는 꼭 다시 보세요!</span></li>
+        <li><b>설정·플러그인 모으기부터 하지 마세요.</b><span>기본 화면으로 충분해요.</span></li>
+      </ol>
+      <p class="key key--foot">본업 판단이 더 오래 갑니다.</p>
+      <aside class="notes">비밀·맹신·설정부터. 이 세 가지만.</aside>
     </section>
 
+    <!-- 16 · 다음 -->
     <section class="slide slide--split-rev" data-title="다음" aria-hidden="true">
-      <figure class="figure figure--inset">
-        <div class="figure__frame">
-          <img src="./assets/illustrations/next-step-parents.jpg" alt="노트북을 함께 여는 부모님" width="1280" height="720" loading="lazy" decoding="async" />
+      <figure class="figure">
+        <div class="figure__fit">
+          <div class="figure__frame">
+            <img src="./assets/illustrations/next-step-parents.jpg" alt="부모님이 함께 노트북을 여는 장면" width="1280" height="720" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="figure__cap">같이 열어보기</figcaption>
         </div>
-        <figcaption class="figure__cap">같이 열어보기</figcaption>
       </figure>
       <div class="copy">
         <h2>다음에 하실 일</h2>
-        <p class="say">1. ChatGPT 계정
-2. (원하시면) Plus
-3. 이번 주 일 하나 — 교과서 사진? 메모?
-
-결제는 두 분이 하세요.
-저는 버튼 안 누릅니다!</p>
+        <ol class="checks">
+          <li>ChatGPT 계정 만들기</li>
+          <li>원하시면 Plus</li>
+          <li>이번 주 일 하나 맡겨 보기 <span>교과서 사진? 메모?</span></li>
+        </ol>
+        <p class="key">결제는 두 분이 하세요. 저는 버튼 안 누릅니다!</p>
       </div>
+      <aside class="notes">다음에 하실 일만. 결제는 부모님이 직접.</aside>
     </section>
 
+    <!-- 17 · 참고 그림 -->
     <section class="slide slide--gallery" data-title="참고 그림" aria-hidden="true">
-      <header>
-        <h2>참고 그림 더 있어요</h2>
-        <p class="meta" style="margin-top:0.35rem">필요할 때 넘기시면 됩니다. 비율은 원본 그대로예요.</p>
+      <header class="head">
+        <h2>참고 그림</h2>
+        <p class="meta">질문이 나오면 여기서 보여 드리기. 비율은 원본 그대로예요.</p>
       </header>
-      <div class="tri">
-        <figure class="figure">
-          <div class="figure__frame">
-            <img src="./assets/from-links/usage-hero.png" alt="OpenAI 사용 연구 히어로" width="1920" height="1080" loading="lazy" decoding="async" />
+      <div class="gallery">
+        <figure class="figure gallery__wide">
+          <div class="figure__fit">
+            <div class="figure__frame">
+              <img src="./assets/illustrations/ai-timeline-unified.jpg" alt="2022부터 2026까지 AI 변화를 다섯 칸으로 그린 타임라인" width="1280" height="720" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="figure__cap">한 줄 역사 일러스트</figcaption>
           </div>
-          <figcaption class="figure__cap">OpenAI 사용 연구</figcaption>
+        </figure>
+        <figure class="figure gallery__wide">
+          <div class="figure__fit">
+            <div class="figure__frame">
+              <img src="./assets/from-links/jev-side-by-side.png" alt="워크플로 정확도와 비용을 비교한 산점도. Jev가 가장 싼 쪽에 있다" width="1672" height="918" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="figure__cap">정확도 vs 비용 (TypeSafe)</figcaption>
+          </div>
         </figure>
         <figure class="figure">
-          <div class="figure__frame">
-            <img src="./assets/from-links/jev-workflow-pareto.png" alt="Jev 워크플로 도표" width="2048" height="704" loading="lazy" decoding="async" />
+          <div class="figure__fit">
+            <div class="figure__frame">
+              <img src="./assets/from-links/usage-hero.png" alt="OpenAI 사용 연구 대표 이미지" width="1920" height="1080" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="figure__cap">OpenAI 사용 연구</figcaption>
           </div>
-          <figcaption class="figure__cap">Jev 워크플로</figcaption>
         </figure>
         <figure class="figure">
-          <div class="figure__frame">
-            <img src="./assets/from-links/shot-jev-blog.png" alt="TypeSafe 블로그 화면" width="2497" height="1469" loading="lazy" decoding="async" />
+          <div class="figure__fit">
+            <div class="figure__frame">
+              <img src="./assets/from-links/jev-workflow-pareto.png" alt="Jev 워크플로 도표" width="2048" height="704" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="figure__cap">Jev 워크플로</figcaption>
           </div>
-          <figcaption class="figure__cap">원문 페이지</figcaption>
+        </figure>
+        <figure class="figure">
+          <div class="figure__fit">
+            <div class="figure__frame">
+              <img src="./assets/from-links/shot-jev-blog.png" alt="TypeSafe 블로그 원문 화면" width="2497" height="1469" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="figure__cap">TypeSafe 원문</figcaption>
+          </div>
         </figure>
       </div>
+      <aside class="notes">부록. 질문 나올 때만.</aside>
     </section>
 
+    <!-- 18 · 출처 -->
     <section class="slide slide--stack" data-title="출처" aria-hidden="true">
-      <h2>출처 · 확인일 2026-10-02</h2>
+      <header class="head">
+        <h2>출처</h2>
+        <p class="meta">확인일 2026-10-02</p>
+      </header>
       <ul class="sources">
-        <li>OpenAI — How people are using ChatGPT</li>
-        <li>OpenAI — ChatGPT Images 2.5 (2026-09-08)</li>
-        <li>TypeSafe — System One &amp; Jev (2026-09-15)</li>
-        <li>Artificial Analysis Intelligence Index</li>
-        <li>Claude Help — 이미지 생성 불가</li>
-        <li>이미지: 자료/일러스트 · 자료/from-links (원본 비율 유지)</li>
+        <li><span>OpenAI — How people are using ChatGPT</span><a href="https://openai.com/index/how-people-are-using-chatgpt/">openai.com/index/how-people-are-using-chatgpt</a></li>
+        <li><span>OpenAI — ChatGPT Images 2.5 (2026-09-08)</span><a href="https://openai.com/index/introducing-chatgpt-images-2-5/">openai.com/index/introducing-chatgpt-images-2-5</a></li>
+        <li><span>TypeSafe — System One &amp; Jev (2026-09-15)</span><a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">typesafe.ai/blog/introducing-system-one-models-and-jev</a></li>
+        <li><span>Artificial Analysis Intelligence Index</span><a href="https://artificialanalysis.ai/">artificialanalysis.ai</a></li>
+        <li><span>Claude Help — 이미지 생성</span><a href="https://support.claude.com/">support.claude.com</a></li>
       </ul>
+      <p class="meta">그림: assets/illustrations · assets/from-links (원본 비율 유지)</p>
     </section>
   </main>
 
+  <div class="notes-panel" id="notes" aria-live="polite" hidden></div>
+
   <nav class="chrome" aria-label="슬라이드 조작">
-    <button type="button" id="prev">이전</button>
+    <button type="button" id="prev" aria-label="이전 슬라이드">이전</button>
     <div class="chrome__progress" aria-hidden="true"><span id="bar"></span></div>
     <span class="chrome__pos" id="pos">1 / 1</span>
-    <button type="button" id="next">다음</button>
+    <button type="button" id="next" aria-label="다음 슬라이드">다음</button>
+    <button type="button" id="note" aria-pressed="false">메모</button>
     <button type="button" id="fs">전체화면</button>
     <span class="chrome__hint" aria-hidden="true">
-      <kbd>←</kbd><kbd>→</kbd><kbd>Space</kbd><kbd>F</kbd>
+      <kbd>←</kbd><kbd>→</kbd><kbd>N</kbd><kbd>F</kbd>
     </span>
   </nav>
 
