@@ -8,47 +8,30 @@ web
 
 ## Stack
 
-static HTML + CSS + JS slide deck (no framework). Served from `발표/` with assets in `../자료/`.
+static HTML + CSS + JS slide deck (no framework).
 
 ## Users
 
-Parents watching on TV/laptop with an adult child operating the deck. TV-distance type. Not developers.
+People who have only tried free AI chat — family, coworkers — watching on a TV or laptop while someone operates the deck. Not developers.
 
 ## Product Purpose
 
-Walk through why AI matters for their work, how it changed (including Jev in one timeline), how to use ChatGPT, then one demo path each — so they may start paid ChatGPT.
+Show what AI can do now (real Opus 5.5 showcase + everyday work scenes), prove paid models are better and allow far more use, and make the case for agents that work on local files (Claude Code, Codex, Cowork). End with a one-month trial.
 
 ## Positioning
 
-Monochrome presentation site: calm paper field, real images at true aspect ratio, spoken Korean mixed with office phrasing. Not a marketing landing page.
-
-## Operating Context
-
-Fullscreen browser. Keyboard and on-screen controls. Offline-capable except optional font CDN. Images from `자료/일러스트` and `자료/from-links`.
+Persuasion deck, not a lecture. Short declarative Korean, no forms of address (no 부모님/어머니/두 분).
 
 ## Capabilities and Constraints
 
-- Binding: **monochrome**
-- Images: **preserve intrinsic aspect ratio** (no crop via object-fit:cover as default)
-- Split sources: `index.html`, `css/deck.css`, `js/deck.js`
-- Jev stays inside AI history, not a separate chapter
-- Payment stays with parents
-
-## Brand Commitments
-
-Monochrome. Respectful conversational Korean. No purple-AI chrome, no 병맛 stamps.
-
-## Evidence on Hand
-
-`발표원고.md`, `자료/일러스트/*`, `자료/from-links/*`
+- Real showcase images only, credited; never stock or AI illustrations
+- Work scenes are drawn in HTML as input → instruction → output and labelled as examples
+- Numbers (scores, limits, prices) carry a date and a source slide
+- Images keep their own aspect ratio
 
 ## Product Principles
 
-1. One idea per slide, TV readable
-2. Pictures tell; text confirms
-3. Honest about Claude vs ChatGPT scores
-4. Real ratios for every image
-
-## Accessibility & Inclusion
-
-Large type, high contrast mono, keyboard navigation, visible focus, reduced-motion respect.
+1. Show the result, then say one line
+2. Every number is sourced and dated
+3. Honest: Claude leads on scores; ChatGPT is still a fine first tool
+4. TV readable
