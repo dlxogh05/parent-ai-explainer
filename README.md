@@ -4,16 +4,14 @@ AI를 무료 채팅으로만 써 본 사람에게 **지금 AI로 무엇을 할 �
 
 ## 바로 보기
 
-```bash
-python -m http.server 8765
-# http://127.0.0.1:8765/
-```
+`index.html` 하나만 브라우저로 열면 된다. CSS·JS가 파일 안에 들어 있어 다른 폴더가 필요 없다.
 
 조작: `←` `→` / Space · `F` 전체화면 (전체화면에서 마우스를 멈추면 조작 막대가 숨는다)
 
-## 사례 이미지 받기
+## 사례 이미지
 
-Opus 5.5 사례 슬라이드(3~6번)의 이미지는 저작자 게시물에서 오기 때문에 저장소에 넣지 않았다. 한 번만 실행하면 `assets/showcase/`에 받아진다.
+Opus 5.5 사례 슬라이드(3~6번)의 이미지는 인터넷에 연결돼 있으면 원본에서 바로 불러온다.
+인터넷 없이 발표할 때는 미리 한 번 받아 두면 `assets/showcase/`의 사본을 쓴다.
 
 ```powershell
 # Windows
@@ -34,9 +32,7 @@ powershell -ExecutionPolicy Bypass -File scripts\fetch-showcase.ps1
 ## 구성
 
 ```
-index.html          슬라이드 21장
-css/deck.css
-js/deck.js          넘기기 · 5초 모션 · 이미지 대체
+index.html          슬라이드 21장 (CSS · JS 포함, 이 파일 하나로 동작)
 assets/showcase/    사례 이미지 (스크립트로 받음)
 assets/motion/      5초 모션 MP4
 scripts/            사례 이미지 받는 스크립트
